@@ -58,9 +58,10 @@ Output:
 ### Q5: Choose all employees whose salaries are higher than the average for their position. (Nested Query)?
 Query:
 ```SQL
-SELECT * FROM employee
+SELECT * FROM employee emp
 WHERE salary > (
 SELECT avg(salary) FROM employee
+  WHERE role = emp.role
 );
 ```
 
